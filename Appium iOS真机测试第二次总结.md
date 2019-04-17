@@ -78,7 +78,7 @@ WebDriverAgentLib和WebDriveAgentRunner的签名（最好每一个target都签�
  可以查看所有链接了这台mac的ios设备信息。
  
 3. 在脚本内写好和测试真机相关的参数，如图：
-![fc983ff44a6ccc32183ccf7d51563f68](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 下午3.41.36.png)
+![https://github.com/delamita/Record/blob/master/Appium%20iOS%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%80%BB%E7%BB%93.resources/%E8%84%9A%E6%9C%AC%E4%BF%AE%E6%94%B9%E8%BF%90%E8%A1%8C%E5%8F%82%E6%95%B0.png](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 下午3.41.36.png)
 
 一共5个参数，真机测试都是要填的，按实际情况填写好保存。
 
@@ -86,7 +86,7 @@ WebDriverAgentLib和WebDriveAgentRunner的签名（最好每一个target都签�
 `ios-deploy -i 这里填要安装的真机udid -b 这里填要安装的ipa包的路径`
 其他具体参数可以查看ios-deploy的帮助，运行命令后开始安装，安装会有进度显示，成功后即可在手机中看到可以运行的app。
 如果要运行测试脚本的时候还真机内还没有安装好app，要用mac上的ipa包进行安装，则在写脚本的时候应该把`bundleId`参数换成`app`，对应的值也该设置为ipa包的路径，如图
-![73f7c59e887c05c831c7ac2c0f21532e](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 下午4.12.54.png)
+![https://github.com/delamita/Record/blob/master/Appium%20iOS%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%80%BB%E7%BB%93.resources/ipa%E5%8C%85%E8%84%9A%E6%9C%AC%E5%8F%82%E6%95%B0.png](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 下午4.12.54.png)
 
 
 4. 运行Appium
@@ -95,7 +95,7 @@ WebDriverAgentLib和WebDriveAgentRunner的签名（最好每一个target都签�
  
    #注意：用Appium启动服务器之后，点击右上searh键可以弹出一个配置session的GUI，其实和脚本内的设置是一样的，点击左下的加号添加参数，具体的参数名和值和测试脚本里是一样的，一一对应填好之后，点击右下Start Session就会开始执行。注意，在start session前要确认最上面一栏选中了Automatic Server，否则会报错。
   此时运行后就会看到app的界面截图，点击截图或者旁边的列表就可以定位元素，还有一些别的功能如点击这个元素等，具体不介绍。
-  ![0d0cf020f1f01c792a2f50769bb1c66e](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 下午3.59.56.png)
+  ![https://github.com/delamita/Record/blob/master/Appium%20iOS%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%80%BB%E7%BB%93.resources/appiumdesktopSession.png](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 下午3.59.56.png)
   
    
  
