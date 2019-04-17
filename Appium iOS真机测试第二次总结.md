@@ -39,7 +39,7 @@ npm config set registry http://registry.npmjs.org/
  在appium-doctor成功安装后可以输入以下指令来检测iOS测试的环境。
  `appium-doctor --ios`  
  appium-doctor检测结果如下
- ![65e5c1e4ae03d764b7c582366c26ca03](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 上午9.33.43.png)
+ ![https://github.com/delamita/Record/blob/master/Appium%20iOS%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%80%BB%E7%BB%93.resources/Appium%20doctor.png](appium-doctor检测结果)
  
  5. 接下来继续昨天的步骤，先试一下能不能模拟机运行。
 
@@ -57,7 +57,7 @@ npm config set registry http://registry.npmjs.org/
 `/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent`
 打开其中的叫WebDriverAgent.xcodeproj的xcode工程文件。修改target中的
 WebDriverAgentLib和WebDriveAgentRunner的签名（最好每一个target都签名。），可以用个人签名，要改一下Identity里的Bundle Identifier，不能是默认的com.facebook.wda.lib。
-![a8b1605994ae9f36c8de93206e885a0c](Appium iOS真机测试第二次总结.resources/5F1C9140-D447-423C-ADC0-13DCCD82E16F.png)
+![https://github.com/delamita/Record/blob/master/Appium%20iOS%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%80%BB%E7%BB%93.resources/webDriverAgent%E4%BF%AE%E6%94%B9%E7%AD%BE%E5%90%8D.png](Appium iOS真机测试第二次总结.webDriverAgent修改签名)
 还有WebdriverAgentRunner的签名，可能会签名失败，这个时候选到Build Settings里的packing选项卡的Product Bundle Indentifier，修改原来的com.facebook.wda.lib就可以了。修改完成后scheme选择WebDriveAgentRunner，输出选择自己的真机，然后运行test，可以直接cmd+U来运行test。（或者长按运行的按钮在下拉里有test选项，第一次运行真机需要在设置里授权。）
 
    这时候编译可能会报错，显示少了两个文件，退出xcode，用终端进入这个目录，运行以下指令来下载所需的依赖：
@@ -67,7 +67,7 @@ WebDriverAgentLib和WebDriveAgentRunner的签名（最好每一个target都签�
    成功test后xcode会在控制台输出如下
    ![96f96e87a5a1ec1aa8d3a9af1a9d6f5d](Appium iOS真机测试第二次总结.resources/B24D1C69-71DF-4DF8-992F-3BD5BCBEF53C.png)
    这个时候去浏览器输入所提示的ServerURL，会打开一串JSON，如图。
-   ![beb631a28aed1be3610a1ff914d7d240](Appium iOS真机测试第二次总结.resources/4A41F815-81E5-451E-B842-23C4C42F8F81.png)
+   ![https://github.com/delamita/Record/blob/master/Appium%20iOS%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%80%BB%E7%BB%93.resources/webDriveAgent%E6%88%90%E5%8A%9FTst.png](Appium iOS真机测试第二次总结.运行成功显示一串json)
    说明WebDriverAgent正常运行。
    
 
