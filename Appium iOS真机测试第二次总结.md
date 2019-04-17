@@ -95,7 +95,7 @@ WebDriverAgentLib和WebDriveAgentRunner的签名（最好每一个target都签�
  
    #注意：用Appium启动服务器之后，点击右上searh键可以弹出一个配置session的GUI，其实和脚本内的设置是一样的，点击左下的加号添加参数，具体的参数名和值和测试脚本里是一样的，一一对应填好之后，点击右下Start Session就会开始执行。注意，在start session前要确认最上面一栏选中了Automatic Server，否则会报错。
   此时运行后就会看到app的界面截图，点击截图或者旁边的列表就可以定位元素，还有一些别的功能如点击这个元素等，具体不介绍。
-  ![https://github.com/delamita/Record/blob/master/Appium%20iOS%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%80%BB%E7%BB%93.resources/appiumdesktopSession.png]
+  ![https://github.com/delamita/Record/blob/master/Appium%20iOS%E7%9C%9F%E6%9C%BA%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%80%BB%E7%BB%93.resources/appiumdesktopSession.png]()
    
  
  
