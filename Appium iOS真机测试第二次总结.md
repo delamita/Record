@@ -39,7 +39,7 @@ npm config set registry http://registry.npmjs.org/
  在appium-doctor成功安装后可以输入以下指令来检测iOS测试的环境。
  `appium-doctor --ios`  
  appium-doctor检测结果如下
- ![65e5c1e4ae03d764b7c582366c26ca03](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 上午9.33.43.png)
+ ![https://github.com/delamita/Record/blob/master/.resources/2.png](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 上午9.33.43.png)
  
  5. 接下来继续昨天的步骤，先试一下能不能模拟机运行。
 
@@ -57,7 +57,7 @@ npm config set registry http://registry.npmjs.org/
 `/usr/local/lib/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent`
 打开其中的叫WebDriverAgent.xcodeproj的xcode工程文件。修改target中的
 WebDriverAgentLib和WebDriveAgentRunner的签名（最好每一个target都签名。），可以用个人签名，要改一下Identity里的Bundle Identifier，不能是默认的com.facebook.wda.lib。
-![a8b1605994ae9f36c8de93206e885a0c](Appium iOS真机测试第二次总结.resources/5F1C9140-D447-423C-ADC0-13DCCD82E16F.png)
+![https://github.com/delamita/Record/blob/master/.resources/3.png](Appium iOS真机测试第二次总结.resources/5F1C9140-D447-423C-ADC0-13DCCD82E16F.png)
 还有WebdriverAgentRunner的签名，可能会签名失败，这个时候选到Build Settings里的packing选项卡的Product Bundle Indentifier，修改原来的com.facebook.wda.lib就可以了。修改完成后scheme选择WebDriveAgentRunner，输出选择自己的真机，然后运行test，可以直接cmd+U来运行test。（或者长按运行的按钮在下拉里有test选项，第一次运行真机需要在设置里授权。）
 
    这时候编译可能会报错，显示少了两个文件，退出xcode，用终端进入这个目录，运行以下指令来下载所需的依赖：
@@ -65,9 +65,9 @@ WebDriverAgentLib和WebDriveAgentRunner的签名（最好每一个target都签�
    `./Scripts/bootstrap.sh -d`
    终端开始下载，如果没有问题等下载完打开xcode工程文件，就可以运行test了，
    成功test后xcode会在控制台输出如下
-   ![96f96e87a5a1ec1aa8d3a9af1a9d6f5d](Appium iOS真机测试第二次总结.resources/B24D1C69-71DF-4DF8-992F-3BD5BCBEF53C.png)
+   ![https://github.com/delamita/Record/blob/master/.resources/8.png](Appium iOS真机测试第二次总结.resources/B24D1C69-71DF-4DF8-992F-3BD5BCBEF53C.png)
    这个时候去浏览器输入所提示的ServerURL，会打开一串JSON，如图。
-   ![beb631a28aed1be3610a1ff914d7d240](Appium iOS真机测试第二次总结.resources/4A41F815-81E5-451E-B842-23C4C42F8F81.png)
+   ![https://github.com/delamita/Record/blob/master/.resources/1.png](Appium iOS真机测试第二次总结.resources/4A41F815-81E5-451E-B842-23C4C42F8F81.png)
    说明WebDriverAgent正常运行。
    
 
@@ -78,7 +78,7 @@ WebDriverAgentLib和WebDriveAgentRunner的签名（最好每一个target都签�
  可以查看所有链接了这台mac的ios设备信息。
  
 3. 在脚本内写好和测试真机相关的参数，如图：
-![fc983ff44a6ccc32183ccf7d51563f68](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 下午3.41.36.png)
+![https://github.com/delamita/Record/blob/master/.resources/5.png](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 下午3.41.36.png)
 
 一共5个参数，真机测试都是要填的，按实际情况填写好保存。
 
@@ -86,7 +86,7 @@ WebDriverAgentLib和WebDriveAgentRunner的签名（最好每一个target都签�
 `ios-deploy -i 这里填要安装的真机udid -b 这里填要安装的ipa包的路径`
 其他具体参数可以查看ios-deploy的帮助，运行命令后开始安装，安装会有进度显示，成功后即可在手机中看到可以运行的app。
 如果要运行测试脚本的时候还真机内还没有安装好app，要用mac上的ipa包进行安装，则在写脚本的时候应该把`bundleId`参数换成`app`，对应的值也该设置为ipa包的路径，如图
-![73f7c59e887c05c831c7ac2c0f21532e](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 下午4.12.54.png)
+![https://github.com/delamita/Record/blob/master/.resources/7.png](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 下午4.12.54.png)
 
 
 4. 运行Appium
@@ -95,7 +95,7 @@ WebDriverAgentLib和WebDriveAgentRunner的签名（最好每一个target都签�
  
    #注意：用Appium启动服务器之后，点击右上searh键可以弹出一个配置session的GUI，其实和脚本内的设置是一样的，点击左下的加号添加参数，具体的参数名和值和测试脚本里是一样的，一一对应填好之后，点击右下Start Session就会开始执行。注意，在start session前要确认最上面一栏选中了Automatic Server，否则会报错。
   此时运行后就会看到app的界面截图，点击截图或者旁边的列表就可以定位元素，还有一些别的功能如点击这个元素等，具体不介绍。
-  ![0d0cf020f1f01c792a2f50769bb1c66e](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 下午3.59.56.png)
+  ![https://github.com/delamita/Record/blob/master/.resources/8.png](Appium iOS真机测试第二次总结.resources/屏幕快照 2019-04-17 下午3.59.56.png)
   
    
  
